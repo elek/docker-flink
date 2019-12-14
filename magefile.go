@@ -78,7 +78,7 @@ func Deploy() error {
 	for _, tags := range versions() {
 		for _, tag := range tags {
 			deployImage("flokkr/flink:" + tag)
-			deployImage("quay.io/flokkr/flink:" + tag)
+//			deployImage("quay.io/flokkr/flink:" + tag)
 		}
 	}
 	return nil
