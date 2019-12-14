@@ -17,13 +17,13 @@ on:
   - push
 jobs:
   build:
-    name: compile
+    name: build
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
       - run: ./build -v build
   deploy:
-    name: rat
+    name: deploy
     runs-on: ubuntu-18.04
     steps:
         - uses: actions/checkout@master
