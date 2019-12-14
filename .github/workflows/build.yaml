@@ -17,25 +17,16 @@ on:
   - push
 jobs:
   build:
-    name: build
+    name: build and deploy
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
       - run: ./build build
-    env:
-      MAGEFILE_VERBOSE: 1
-  deploy:
-    name: deploy
-    runs-on: ubuntu-18.04
-    needs:
-      - build
-    steps:
-        - uses: actions/checkout@master
-        - uses: azure/docker-login@v1
+      - uses: azure/docker-login@v1
           with:
             login-server: https://index.docker.io/v1/
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
-        - run: ./build deploy
+       - run: ./build deploy
     env:
       MAGEFILE_VERBOSE: 1
