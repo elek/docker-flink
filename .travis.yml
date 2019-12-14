@@ -1,0 +1,14 @@
+sudo: required
+
+services:
+   - docker
+
+script:
+   - ./build build
+
+before_deploy:
+   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
+deploy:
+   - provider: script
+     script: ./build deploy

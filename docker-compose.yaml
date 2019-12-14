@@ -1,0 +1,18 @@
+version: "2.1"
+services:
+  jobmanager:
+    build: .
+    command: "jobmanager.sh start-foreground"
+    ports:
+      - 8081:8081
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+    env_file: 
+     - docker-config
+  taskmanager:
+    build: .
+    command: taskmanager.sh start-foreground
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+    env_file:
+      - docker-config
