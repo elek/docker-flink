@@ -21,10 +21,10 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
-      - run: ./build/build
+      - run: ./build -v build
   deploy:
     name: rat
     runs-on: ubuntu-18.04
     steps:
         - uses: actions/checkout@master
-        - run: ./build/deploy
+        - run: ./build -v deploy
