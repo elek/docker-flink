@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   jobmanager:
-    build: .
+    image: flokkr/flink
     command: "jobmanager.sh start-foreground"
     ports:
       - 8081:8081
@@ -10,7 +10,7 @@ services:
     env_file: 
      - docker-config
   taskmanager:
-    build: .
+    image: flokkr/flink
     command: taskmanager.sh start-foreground
     environment:
       - JOB_MANAGER_RPC_ADDRESS=jobmanager
