@@ -37,6 +37,3 @@ spec:
       - name: jobmanager
         image: flokkr/flink
         args: ["jobmanager.sh","start-foreground"]
-        env:
-          - name: LAUNCHER_UPDATE
-            value: "true"

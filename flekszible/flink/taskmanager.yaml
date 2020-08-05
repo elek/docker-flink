@@ -37,6 +37,3 @@ spec:
       - name: taskmanager
         image: flokkr/flink
         args: ["taskmanager.sh","start-foreground"]
-        env:
-          - name: LAUNCHER_UPDATE
-            value: "true"

@@ -25,9 +25,6 @@ spec:
         args:
         - jobmanager.sh
         - start-foreground
-        env:
-        - name: LAUNCHER_UPDATE
-          value: "true"
         envFrom:
         - configMapRef:
             name: flink-config

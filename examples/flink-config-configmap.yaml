@@ -7,3 +7,4 @@ data:
   FLINK-CONF.YAML: properties
   FLINK-CONF.YAML_jobmanager.rpc.address: flink-jobmanager-0.flink-jobmanager
   FLINK-CONF.YAML_taskmanager.memory.process.size: 2g
+  FLINK-CONF.YAML_jobmanager.memory.process.size: 2g

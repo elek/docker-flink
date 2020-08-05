@@ -32,6 +32,9 @@ kubectl apply -f "$K8S_DIR"
 
 retry all_pods_are_running
 
+retry grep_log flink-jobmanager-0 Registering TaskManager
+retry grep_log flink-taskmanager-0 Successful registration
+
 execute_robot_test flink-jobmanager-0 /opt/smoketest/flink.robot "$RESULT_DIR/flink.xml"
 
 #kubectl delete -f "$K8S_DIR"
