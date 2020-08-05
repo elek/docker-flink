@@ -7,6 +7,9 @@ Library          String
 
 *** Test Cases ***
 
+Check version
+  ${output} =      Execute                     flink --version
+
 Run Sample WordCount
   ${output} =      Execute                     flink run /opt/flink/examples/batch/WordCount.jar
                    Should Contain              ${output}           something
